@@ -9,8 +9,8 @@ export TMP_DIR="/tmp/iftop"
 # Passo 1: Instale as dependências para compilar o iftop
 #
 # Habilita os repositórios
-sed -i -e 's/enabled=0/enabled=1/g' /etc/yum.repos.d/public-yum-ol7.repo
-yum -y install libpcap libpcap-devel ncurses ncurses-devel wget gcc-c++
+yum -y install libpcap libpcap-devel ncurses ncurses-devel wget gcc-c++ yum-utils
+yum-config-manager --enable ol7_optional_latest
 
 #
 # Passo 2: Crie uma área temporária para ser usada durante a instalação
