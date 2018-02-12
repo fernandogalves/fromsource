@@ -101,13 +101,14 @@ cd ${TMP_DIR}/httpd-${APACHE_VERSION}
 make 
 make install
 
-export PATH=/etc/httpd/bin:$PATH
-
 #
 # Passo 6: Executando o apache
 #
 echo " Passo 6: Executando o apache"
-apachectl start
+export PATH=/etc/httpd/bin:$PATH
+apachectl -k start
 
 # Verifique se está no ar
 netstat -tuplen | grep 80
+
+apachectl -V
