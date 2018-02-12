@@ -106,9 +106,10 @@ make install
 #
 echo " Passo 6: Executando o apache"
 export PATH=/etc/httpd/bin:$PATH
-apachectl -k start
+echo "export PATH=/etc/httpd/bin:$PATH" >> /etc/profile
+/etc/httpd/bin/apachectl -k start
 
 # Verifique se está no ar
 netstat -tuplen | grep 80
 
-apachectl -V
+/etc/httpd/bin/apachectl -V
