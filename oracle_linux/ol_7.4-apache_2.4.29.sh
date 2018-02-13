@@ -12,6 +12,14 @@ echo " Iniciando a instalação do apache no Oracle Linux Server 7.4"
 #
 # Passo 0: Verifica se o sistema operacional está correto
 #
+if [ ! -e /etc/os-release ]; then
+
+	echo " O sistema operacional não é suportado por esse script"
+	echo "=================================================================================="
+	exit
+
+fi
+
 OS_VERSION=`cat /etc/os-release | grep PRETTY_NAME | cut -d'"' -f2`
 
 if [ "${OS_VERSION}" != "Oracle Linux Server 7.4" ]; then
